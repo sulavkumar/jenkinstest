@@ -20,6 +20,12 @@ pipeline {
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
+        
+        stage('Scanning Image') {
+        steps {
+            sysdigImageScan engineCredentialsId: 'sysdig-secure-api-credentials', imageName: "${IMAGE_NAME}"
+            }
+        }
 
         stage('Push Docker Image') {
             steps {
