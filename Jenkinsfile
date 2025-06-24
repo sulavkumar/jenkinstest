@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                    docker build -t helloworldtest:6
+                    docker build -t helloworldtest:6 .
                 '''
             }
         }
