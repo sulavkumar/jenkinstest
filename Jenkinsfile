@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                    docker build -t helloWorldTest:0.1 .
+                    docker build -t helloworldtest:0.1 .
                 '''
             }
         }
